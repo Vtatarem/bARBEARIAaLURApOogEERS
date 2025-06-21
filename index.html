@@ -3,19 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Barbearia</title>
+  <title>Barbearia Império do Corte</title>
   <style>
     body {
       background-color: #333;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 30px;
+      padding: 0;
+      margin: 0;
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+    .titulo-principal {
+      font-size: 48px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .subtitulo {
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #ccc;
     }
 
     .divisoria {
@@ -26,12 +35,17 @@
       height: 1px;
     }
 
+    h1 {
+      font-size: 32px;
+      margin: 20px 0;
+    }
+
     .menu {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      margin: 20px 0 40px;
+      margin: 40px 0;
     }
 
     .menu button {
@@ -52,14 +66,18 @@
     .conteudo {
       font-size: 18px;
       max-width: 800px;
-      margin: 0 auto;
+      margin: 0 auto 40px;
       line-height: 1.8;
       text-align: justify;
     }
   </style>
 </head>
 <body>
+
+  <div class="titulo-principal">Barbearia Império do Corte</div>
+  <div class="subtitulo">Onde o estilo e a tradição se encontram</div>
   <div class="divisoria"></div>
+
   <h1 id="titulo">Bem-vindo à Barbearia</h1>
   <div class="divisoria"></div>
 
@@ -86,13 +104,13 @@
 
   <script>
     const textos = {
-      "HOME": "Seja muito bem-vindo à Barbearia Estilo Fino, um espaço pensado para homens que valorizam o cuidado com a aparência e o bem-estar. Aqui você encontra não apenas serviços de alta qualidade, mas também um ambiente acolhedor, moderno e profissional. Nossa equipe está pronta para oferecer cortes de cabelo, design de barba e atendimentos personalizados para que você saia daqui sempre satisfeito. Sinta-se em casa!",
+      "HOME": "Seja muito bem-vindo à Barbearia Império do Corte, um espaço pensado para homens que valorizam o cuidado com a aparência e o bem-estar. Aqui você encontra não apenas serviços de alta qualidade, mas também um ambiente acolhedor, moderno e profissional. Nossa equipe está pronta para oferecer cortes de cabelo, design de barba e atendimentos personalizados para que você saia daqui sempre satisfeito. Sinta-se em casa!",
       
       "QUEM SOMOS": "Somos uma barbearia que une tradição e modernidade. Fundada por profissionais apaixonados por estilo e atendimento de excelência, temos como missão valorizar a autoestima de nossos clientes. Acreditamos que um corte bem feito vai além da aparência — é sobre confiança, identidade e atitude. Estamos no mercado desde 2015, sempre atualizados com as tendências e técnicas mais modernas do universo masculino.",
       
       "PRODUTOS": "Oferecemos uma linha completa de produtos premium para cabelo, barba e cuidados masculinos em geral. Trabalhamos com marcas renomadas como Barba Brava, Don Alcides, entre outras, garantindo o melhor resultado tanto no salão quanto no cuidado diário em casa. Nossos barbeiros também recomendam os produtos ideais para o seu tipo de cabelo e pele.",
       
-      "PROMOÇÃO": "Aqui na Barbearia Estilo Fino, toda semana você encontra promoções especiais pensadas para facilitar sua rotina. Temos pacotes promocionais para cortes e barbas, descontos em dias da semana e vantagens para clientes que indicam amigos. Siga nossas redes sociais para ficar por dentro das ofertas e não perder nenhuma oportunidade!",
+      "PROMOÇÃO": "Aqui na Barbearia Império do Corte, toda semana você encontra promoções especiais pensadas para facilitar sua rotina. Temos pacotes promocionais para cortes e barbas, descontos em dias da semana e vantagens para clientes que indicam amigos. Siga nossas redes sociais para ficar por dentro das ofertas e não perder nenhuma oportunidade!",
       
       "PARCEIROS": "Temos orgulho em construir parcerias sólidas com marcas, lojas e profissionais que compartilham dos nossos valores. Nossos parceiros fortalecem nossa barbearia com qualidade, inovação e presença em eventos e ações conjuntas. Se você deseja ser nosso parceiro, entre em contato e venha fazer parte dessa rede de estilo e sucesso.",
       
@@ -100,11 +118,11 @@
       
       "TRABALHE CONOSCO": "Você é barbeiro, está em busca de uma nova oportunidade e quer crescer junto com uma equipe dedicada? Envie seu currículo para nós! Valorizamos profissionais comprometidos, criativos e apaixonados pelo que fazem. Oferecemos um ambiente acolhedor, bem estruturado e cheio de oportunidades para o seu talento brilhar.",
       
-      "LOCALIZAÇÃO": "A Barbearia Estilo Fino está localizada em uma área de fácil acesso no centro da cidade. Com estacionamento próprio e ambiente seguro, oferecemos conforto e praticidade para que você possa cuidar do seu estilo com tranquilidade. Nos encontramos na Rua Estilo, nº 123 — venha nos visitar!",
+      "LOCALIZAÇÃO": "A Barbearia Império do Corte está localizada em uma área de fácil acesso no centro da cidade. Com estacionamento próprio e ambiente seguro, oferecemos conforto e praticidade para que você possa cuidar do seu estilo com tranquilidade. Nos encontramos na Rua Estilo, nº 123 — venha nos visitar!",
       
       "VÍDEOS": "Confira nossos vídeos com transformações incríveis, bastidores do atendimento, dicas de cuidados com a barba e cabelo, além de tutoriais exclusivos com nossos barbeiros. Nosso canal é atualizado constantemente para levar até você o melhor conteúdo sobre o universo masculino.",
       
-      "EXTRA": "Esta seção é reservada para conteúdos especiais: eventos, sorteios, curiosidades, tendências e muito mais. É aqui que você encontra tudo o que vai além do atendimento, mas faz parte da essência da Barbearia Estilo Fino. Fique ligado para aproveitar o melhor que preparamos para nossos clientes!"
+      "EXTRA": "Esta seção é reservada para conteúdos especiais: eventos, sorteios, curiosidades, tendências e muito mais. É aqui que você encontra tudo o que vai além do atendimento, mas faz parte da essência da Barbearia Império do Corte. Fique ligado para aproveitar o melhor que preparamos para nossos clientes!"
     };
 
     function mostrar(opcao) {
