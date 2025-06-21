@@ -1,27 +1,92 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>  
-        <meta charset= "UTF-8" >
-        <title> Barbearia Alura </title>
-      <style>
-p{
-    text-align: center
-}
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Barbearia</title>
+  <style>
+    body {
+      background-color: #333;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
 
-      </style>
-    </head>
-    <body>  
-        <h1>Sobre a Barbearia Alura</h1>
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
 
-        <p style="text-align: center; font-size: 20px;"> Localizada no coração da cidade a <strong>Barbearia Alura</strong> traz para o mercado o que há de melhor para o seu 
-            cabelo e barba. 
-        Fundada em 2019, a Barbearia Alura já é destaque na cidade e conquista novos clientes a cada dia.</p>
-    
-        <p style="font-size: 30px; text-align: center"><em>Nossa missão é: <strong>"Proporcionar auto-estima e qualidade de vida aos clientes"</strong>.</em></p>
-    
-        <p style="text-align: center;">Oferecemos profissionais experientes e antenados às mudanças no mundo da moda. 
-        O atendimento possui padrão de excelência e agilidade, garantindo qualidade e satisfação dos nossos clientes.</p>
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
 
-        
-    </body>
+    .menu button {
+      background-color: transparent;
+      border: 2px solid white;
+      color: white;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .menu button:hover {
+      background-color: white;
+      color: #333;
+    }
+
+    .conteudo {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="titulo">Bem-vindo à Barbearia</h1>
+
+  <div class="menu">
+    <button onclick="mostrar('HOME')">HOME</button>
+    <button onclick="mostrar('QUEM SOMOS')">QUEM SOMOS</button>
+    <button onclick="mostrar('PRODUTOS')">PRODUTOS</button>
+    <button onclick="mostrar('PROMOÇÃO')">PROMOÇÃO</button>
+    <button onclick="mostrar('PARCEIROS')">PARCEIROS</button>
+    <button onclick="mostrar('CONTATOS')">CONTATOS</button>
+    <button onclick="mostrar('TRABALHE CONOSCO')">TRABALHE CONOSCO</button>
+    <button onclick="mostrar('LOCALIZAÇÃO')">LOCALIZAÇÃO</button>
+    <button onclick="mostrar('VÍDEOS')">VÍDEOS</button>
+    <button onclick="mostrar('EXTRA')">EXTRA</button>
+  </div>
+
+  <div class="conteudo" id="descricao">
+    Clique em uma opção acima para saber mais.
+  </div>
+
+  <script>
+    const textos = {
+      "HOME": "Bem-vindo à Barbearia Estilo Fino! Oferecemos cortes modernos, ambiente acolhedor e profissionais experientes.",
+      "QUEM SOMOS": "Somos uma barbearia tradicional com toques modernos, fundada para proporcionar estilo, conforto e confiança aos nossos clientes.",
+      "PRODUTOS": "Trabalhamos com produtos de alta qualidade para cabelo e barba, das melhores marcas do mercado.",
+      "PROMOÇÃO": "Confira nossas promoções semanais! Descontos especiais em cortes, barbas e pacotes completos.",
+      "PARCEIROS": "Temos parcerias com marcas de cosméticos, escolas de barbeiros e lojas locais. Juntos, fortalecemos nosso serviço.",
+      "CONTATOS": "Fale conosco pelo WhatsApp, telefone ou redes sociais. Estamos sempre prontos para te atender!",
+      "TRABALHE CONOSCO": "Se você é barbeiro e busca uma equipe unida e ambiente profissional, envie seu currículo e junte-se a nós.",
+      "LOCALIZAÇÃO": "Estamos localizados no centro da cidade, com fácil acesso e estacionamento gratuito para clientes.",
+      "VÍDEOS": "Veja nossos vídeos com transformações incríveis, dicas de cuidados e bastidores da barbearia.",
+      "EXTRA": "Aqui você encontra novidades, eventos especiais e conteúdos exclusivos para nossos clientes."
+    };
+
+    function mostrar(opcao) {
+      document.getElementById("titulo").textContent = opcao;
+      document.getElementById("descricao").textContent = textos[opcao];
+    }
+  </script>
+</body>
 </html>
