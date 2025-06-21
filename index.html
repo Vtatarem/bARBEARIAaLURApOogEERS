@@ -2,84 +2,99 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barbearia Império do Corte</title>
   <style>
     body {
-      background-color: #333;
-      color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 0;
+      background-color: #1e1e1e;
+      color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #111;
+      padding: 40px 20px 20px;
+      text-align: center;
     }
 
     .titulo-principal {
       font-size: 48px;
-      font-weight: bold;
-      margin-top: 40px;
+      color: #e6b800;
       margin-bottom: 10px;
     }
 
     .subtitulo {
-      font-size: 22px;
-      margin-bottom: 30px;
+      font-size: 20px;
       color: #ccc;
     }
 
     .divisoria {
-      border-top: 2px solid white;
-      border-bottom: 2px solid white;
+      border-top: 2px solid #444;
+      border-bottom: 2px solid #444;
       margin: 30px auto;
       width: 90%;
-      height: 1px;
-    }
-
-    h1 {
-      font-size: 32px;
-      margin: 20px 0;
     }
 
     .menu {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin: 40px 0;
+      gap: 12px;
+      padding: 20px;
+      background-color: #2a2a2a;
     }
 
     .menu button {
       background-color: transparent;
-      border: 2px solid white;
-      color: white;
+      border: 2px solid #e6b800;
+      color: #e6b800;
       padding: 10px 20px;
-      cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border-radius: 5px;
     }
 
     .menu button:hover {
-      background-color: white;
-      color: #333;
+      background-color: #e6b800;
+      color: #1e1e1e;
     }
 
     .conteudo {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .conteudo img {
+      width: 100%;
+      max-width: 900px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    .conteudo h2 {
+      color: #e6b800;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .conteudo p {
       font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      line-height: 1.8;
-      text-align: justify;
+      line-height: 1.6;
+      color: #ddd;
     }
   </style>
 </head>
 <body>
-
-  <div class="titulo-principal">Barbearia Império do Corte</div>
-  <div class="subtitulo">Onde o estilo e a tradição se encontram</div>
-  <div class="divisoria"></div>
-
-  <h1 id="titulo">Bem-vindo à Barbearia</h1>
-  <div class="divisoria"></div>
+  <header>
+    <div class="titulo-principal">Barbearia Império do Corte</div>
+    <div class="subtitulo">Onde o estilo e a tradição se encontram</div>
+  </header>
 
   <div class="menu">
     <button onclick="mostrar('HOME')">HOME</button>
@@ -97,37 +112,61 @@
   <div class="divisoria"></div>
 
   <div class="conteudo" id="descricao">
-    Clique em uma opção acima para saber mais.
+    <img id="imagem" src="https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg" alt="Imagem da barbearia">
+    <h2 id="titulo">HOME</h2>
+    <p id="texto">Seja muito bem-vindo à Barbearia Império do Corte, um espaço pensado para homens que valorizam o cuidado com a aparência e o bem-estar...</p>
   </div>
 
   <div class="divisoria"></div>
 
   <script>
     const textos = {
-      "HOME": "Seja muito bem-vindo à Barbearia Império do Corte, um espaço pensado para homens que valorizam o cuidado com a aparência e o bem-estar. Aqui você encontra não apenas serviços de alta qualidade, mas também um ambiente acolhedor, moderno e profissional. Nossa equipe está pronta para oferecer cortes de cabelo, design de barba e atendimentos personalizados para que você saia daqui sempre satisfeito. Sinta-se em casa!",
-      
-      "QUEM SOMOS": "Somos uma barbearia que une tradição e modernidade. Fundada por profissionais apaixonados por estilo e atendimento de excelência, temos como missão valorizar a autoestima de nossos clientes. Acreditamos que um corte bem feito vai além da aparência — é sobre confiança, identidade e atitude. Estamos no mercado desde 2015, sempre atualizados com as tendências e técnicas mais modernas do universo masculino.",
-      
-      "PRODUTOS": "Oferecemos uma linha completa de produtos premium para cabelo, barba e cuidados masculinos em geral. Trabalhamos com marcas renomadas como Barba Brava, Don Alcides, entre outras, garantindo o melhor resultado tanto no salão quanto no cuidado diário em casa. Nossos barbeiros também recomendam os produtos ideais para o seu tipo de cabelo e pele.",
-      
-      "PROMOÇÃO": "Aqui na Barbearia Império do Corte, toda semana você encontra promoções especiais pensadas para facilitar sua rotina. Temos pacotes promocionais para cortes e barbas, descontos em dias da semana e vantagens para clientes que indicam amigos. Siga nossas redes sociais para ficar por dentro das ofertas e não perder nenhuma oportunidade!",
-      
-      "PARCEIROS": "Temos orgulho em construir parcerias sólidas com marcas, lojas e profissionais que compartilham dos nossos valores. Nossos parceiros fortalecem nossa barbearia com qualidade, inovação e presença em eventos e ações conjuntas. Se você deseja ser nosso parceiro, entre em contato e venha fazer parte dessa rede de estilo e sucesso.",
-      
-      "CONTATOS": "Fale conosco de forma rápida e prática! Estamos disponíveis pelo WhatsApp, telefone fixo, Instagram e Facebook. Nossa equipe está sempre pronta para agendamentos, dúvidas, sugestões e tudo o que você precisar. Atendimento de qualidade começa no primeiro contato.",
-      
-      "TRABALHE CONOSCO": "Você é barbeiro, está em busca de uma nova oportunidade e quer crescer junto com uma equipe dedicada? Envie seu currículo para nós! Valorizamos profissionais comprometidos, criativos e apaixonados pelo que fazem. Oferecemos um ambiente acolhedor, bem estruturado e cheio de oportunidades para o seu talento brilhar.",
-      
-      "LOCALIZAÇÃO": "A Barbearia Império do Corte está localizada em uma área de fácil acesso no centro da cidade. Com estacionamento próprio e ambiente seguro, oferecemos conforto e praticidade para que você possa cuidar do seu estilo com tranquilidade. Nos encontramos na Rua Estilo, nº 123 — venha nos visitar!",
-      
-      "VÍDEOS": "Confira nossos vídeos com transformações incríveis, bastidores do atendimento, dicas de cuidados com a barba e cabelo, além de tutoriais exclusivos com nossos barbeiros. Nosso canal é atualizado constantemente para levar até você o melhor conteúdo sobre o universo masculino.",
-      
-      "EXTRA": "Esta seção é reservada para conteúdos especiais: eventos, sorteios, curiosidades, tendências e muito mais. É aqui que você encontra tudo o que vai além do atendimento, mas faz parte da essência da Barbearia Império do Corte. Fique ligado para aproveitar o melhor que preparamos para nossos clientes!"
+      "HOME": {
+        texto: "Seja muito bem-vindo à Barbearia Império do Corte, um espaço pensado para homens que valorizam o cuidado com a aparência e o bem-estar...",
+        imagem: "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg"
+      },
+      "QUEM SOMOS": {
+        texto: "Somos uma barbearia que une tradição e modernidade...",
+        imagem: "https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg"
+      },
+      "PRODUTOS": {
+        texto: "Oferecemos uma linha completa de produtos premium para cabelo, barba...",
+        imagem: "https://images.pexels.com/photos/3798479/pexels-photo-3798479.jpeg"
+      },
+      "PROMOÇÃO": {
+        texto: "Toda semana você encontra promoções especiais pensadas para facilitar sua rotina...",
+        imagem: "https://images.pexels.com/photos/7755555/pexels-photo-7755555.jpeg"
+      },
+      "PARCEIROS": {
+        texto: "Temos orgulho em construir parcerias sólidas com marcas, lojas e profissionais...",
+        imagem: "https://images.pexels.com/photos/8438914/pexels-photo-8438914.jpeg"
+      },
+      "CONTATOS": {
+        texto: "Fale conosco de forma rápida e prática! Atendimento via WhatsApp, telefone e redes sociais...",
+        imagem: "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg"
+      },
+      "TRABALHE CONOSCO": {
+        texto: "Você é barbeiro, está em busca de uma nova oportunidade?...",
+        imagem: "https://images.pexels.com/photos/5995319/pexels-photo-5995319.jpeg"
+      },
+      "LOCALIZAÇÃO": {
+        texto: "Estamos localizados em uma região central com estacionamento próprio...",
+        imagem: "https://images.pexels.com/photos/5721907/pexels-photo-5721907.jpeg"
+      },
+      "VÍDEOS": {
+        texto: "Confira nossos vídeos com transformações e dicas exclusivas...",
+        imagem: "https://images.pexels.com/photos/6994986/pexels-photo-6994986.jpeg"
+      },
+      "EXTRA": {
+        texto: "Eventos, sorteios, novidades e tudo que acontece fora da cadeira...",
+        imagem: "https://images.pexels.com/photos/7689146/pexels-photo-7689146.jpeg"
+      }
     };
 
     function mostrar(opcao) {
       document.getElementById("titulo").textContent = opcao;
-      document.getElementById("descricao").textContent = textos[opcao];
+      document.getElementById("texto").textContent = textos[opcao].texto;
+      document.getElementById("imagem").src = textos[opcao].imagem;
     }
   </script>
 </body>
