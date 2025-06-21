@@ -3,56 +3,93 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Barbearia</title>
+  <title>Barbearia Estilo Fino</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #333;
-      color: white;
-      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #2f2f2f;
+      font-family: 'Montserrat', sans-serif;
+      color: #f5f5f5;
+    }
+
+    header {
+      background-color: #1c1c1c;
+      padding: 30px 20px;
       text-align: center;
-      padding: 30px;
+      border-bottom: 3px solid #555;
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 20px;
+    header h1 {
+      font-size: 38px;
+      margin: 0;
+      letter-spacing: 2px;
     }
 
-    .menu {
+    nav {
+      background-color: #2f2f2f;
+      padding: 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin-bottom: 30px;
+      gap: 12px;
+      border-bottom: 2px solid #444;
     }
 
-    .menu button {
-      background-color: transparent;
-      border: 2px solid white;
-      color: white;
+    nav button {
+      background: none;
+      border: 2px solid #f5f5f5;
+      color: #f5f5f5;
       padding: 10px 20px;
-      cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .menu button:hover {
-      background-color: white;
-      color: #333;
+    nav button:hover {
+      background-color: #f5f5f5;
+      color: #2f2f2f;
     }
 
-    .conteudo {
+    section {
+      padding: 40px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #555;
+      padding-bottom: 10px;
+    }
+
+    section p {
       font-size: 18px;
-      max-width: 700px;
+      line-height: 1.7;
+      text-align: justify;
       margin: 0 auto;
-      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #aaa;
+      border-top: 2px solid #444;
+      background-color: #1c1c1c;
     }
   </style>
 </head>
 <body>
-  <h1 id="titulo">Bem-vindo à Barbearia</h1>
 
-  <div class="menu">
+  <header>
+    <h1 id="titulo">Bem-vindo à Barbearia Estilo Fino</h1>
+  </header>
+
+  <nav>
     <button onclick="mostrar('HOME')">HOME</button>
     <button onclick="mostrar('QUEM SOMOS')">QUEM SOMOS</button>
     <button onclick="mostrar('PRODUTOS')">PRODUTOS</button>
@@ -63,28 +100,36 @@
     <button onclick="mostrar('LOCALIZAÇÃO')">LOCALIZAÇÃO</button>
     <button onclick="mostrar('VÍDEOS')">VÍDEOS</button>
     <button onclick="mostrar('EXTRA')">EXTRA</button>
-  </div>
+  </nav>
 
-  <div class="conteudo" id="descricao">
-    Clique em uma opção acima para saber mais.
-  </div>
+  <section>
+    <h2 id="secao-titulo">Navegue pelo menu acima</h2>
+    <p id="descricao">
+      Clique em uma das opções para descobrir mais sobre nossos serviços, história, produtos e muito mais. A Barbearia Estilo Fino tem orgulho em oferecer o melhor para você.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Barbearia Estilo Fino — Todos os direitos reservados.
+  </footer>
 
   <script>
     const textos = {
-      "HOME": "Bem-vindo à Barbearia Estilo Fino! Oferecemos cortes modernos, ambiente acolhedor e profissionais experientes.",
-      "QUEM SOMOS": "Somos uma barbearia tradicional com toques modernos, fundada para proporcionar estilo, conforto e confiança aos nossos clientes.",
-      "PRODUTOS": "Trabalhamos com produtos de alta qualidade para cabelo e barba, das melhores marcas do mercado.",
-      "PROMOÇÃO": "Confira nossas promoções semanais! Descontos especiais em cortes, barbas e pacotes completos.",
-      "PARCEIROS": "Temos parcerias com marcas de cosméticos, escolas de barbeiros e lojas locais. Juntos, fortalecemos nosso serviço.",
-      "CONTATOS": "Fale conosco pelo WhatsApp, telefone ou redes sociais. Estamos sempre prontos para te atender!",
-      "TRABALHE CONOSCO": "Se você é barbeiro e busca uma equipe unida e ambiente profissional, envie seu currículo e junte-se a nós.",
-      "LOCALIZAÇÃO": "Estamos localizados no centro da cidade, com fácil acesso e estacionamento gratuito para clientes.",
-      "VÍDEOS": "Veja nossos vídeos com transformações incríveis, dicas de cuidados e bastidores da barbearia.",
-      "EXTRA": "Aqui você encontra novidades, eventos especiais e conteúdos exclusivos para nossos clientes."
+      "HOME": "A Barbearia Estilo Fino é o seu destino certo para cortes modernos, barbas bem feitas e um ambiente acolhedor. Desde o momento em que você entra, garantimos atendimento de qualidade, conforto e estilo em cada detalhe.",
+      "QUEM SOMOS": "Fundada em 2015, a Barbearia Estilo Fino nasceu do sonho de unir tradição e modernidade em um só lugar. Somos uma equipe de barbeiros apaixonados por transformar visual e autoestima, sempre em busca da excelência.",
+      "PRODUTOS": "Utilizamos apenas produtos de alta performance para cuidados com cabelo e barba, selecionados das melhores marcas nacionais e internacionais. Seu visual merece o melhor em qualidade e proteção.",
+      "PROMOÇÃO": "Toda semana temos promoções exclusivas! Cortes com desconto, pacotes para pai e filho, fidelidade premiada e muito mais. Fique ligado nas redes sociais ou fale conosco para aproveitar.",
+      "PARCEIROS": "Temos orgulho de colaborar com marcas reconhecidas no setor de beleza masculina, barbearias parceiras e instituições de formação profissional. Juntos, crescemos mais fortes.",
+      "CONTATOS": "Entre em contato conosco através do WhatsApp, telefone fixo ou redes sociais. Nossa equipe está pronta para agendar seu horário ou tirar dúvidas com agilidade e simpatia.",
+      "TRABALHE CONOSCO": "Se você é barbeiro profissional, ama o que faz e busca um ambiente moderno e respeitoso, envie seu currículo para nós. Estamos sempre em busca de talentos para fazer parte da nossa equipe.",
+      "LOCALIZAÇÃO": "Estamos localizados no coração da cidade, com fácil acesso e estacionamento para clientes. Rua das Estrelas, nº 45 – Centro. Venha nos visitar!",
+      "VÍDEOS": "Assista aos bastidores, transformações incríveis e dicas de cuidado no nosso canal. Nosso conteúdo é feito para inspirar você a cuidar do seu visual com estilo e personalidade.",
+      "EXTRA": "Aqui você encontra novidades, eventos, sorteios e conteúdos exclusivos que preparamos com carinho para nossos clientes. Acompanhe nossas redes sociais para não perder nada!"
     };
 
     function mostrar(opcao) {
-      document.getElementById("titulo").textContent = opcao;
+      document.getElementById("titulo").textContent = "Barbearia Estilo Fino — " + opcao;
+      document.getElementById("secao-titulo").textContent = opcao;
       document.getElementById("descricao").textContent = textos[opcao];
     }
   </script>
