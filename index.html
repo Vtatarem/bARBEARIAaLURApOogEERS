@@ -1,92 +1,116 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Barbearia Estilo Fino</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      background-color: #2f2f2f;
-      font-family: 'Montserrat', sans-serif;
-      color: #f5f5f5;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #eeeeee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
     }
 
     header {
-      background-color: #1c1c1c;
-      padding: 30px 20px;
+      width: 100%;
       text-align: center;
-      border-bottom: 3px solid #555;
+      padding: 40px 20px 20px;
+      border-bottom: 1px solid #2c2c2c;
     }
 
     header h1 {
-      font-size: 38px;
-      margin: 0;
-      letter-spacing: 2px;
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #ffffff;
     }
 
     nav {
-      background-color: #2f2f2f;
-      padding: 20px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      border-bottom: 2px solid #444;
+      padding: 20px;
+      background-color: #1e1e1e;
+      width: 100%;
+      border-bottom: 1px solid #2c2c2c;
     }
 
     nav button {
-      background: none;
-      border: 2px solid #f5f5f5;
-      color: #f5f5f5;
-      padding: 10px 20px;
-      font-weight: bold;
+      background: #2a2a2a;
+      color: #ffffff;
+      border: 1px solid #444;
+      padding: 10px 16px;
       border-radius: 8px;
       cursor: pointer;
       transition: all 0.3s ease;
+      font-weight: 600;
     }
 
     nav button:hover {
-      background-color: #f5f5f5;
-      color: #2f2f2f;
+      background: #ffffff;
+      color: #121212;
+      transform: scale(1.05);
     }
 
     section {
-      padding: 40px 20px;
-      text-align: center;
       max-width: 900px;
-      margin: auto;
+      padding: 40px 20px;
+      animation: fadeIn 0.3s ease;
     }
 
     section h2 {
-      font-size: 32px;
+      font-size: 2rem;
       margin-bottom: 20px;
-      border-bottom: 2px solid #555;
-      padding-bottom: 10px;
+      color: #00dfc4;
+      border-bottom: 2px solid #2c2c2c;
+      padding-bottom: 8px;
     }
 
     section p {
-      font-size: 18px;
-      line-height: 1.7;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #cccccc;
       text-align: justify;
-      margin: 0 auto;
     }
 
     footer {
-      text-align: center;
+      margin-top: auto;
       padding: 20px;
-      font-size: 14px;
-      color: #aaa;
-      border-top: 2px solid #444;
-      background-color: #1c1c1c;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #2c2c2c;
+      width: 100%;
+      text-align: center;
+      background-color: #1a1a1a;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1 id="titulo">Bem-vindo à Barbearia Estilo Fino</h1>
+    <h1 id="titulo">Barbearia Estilo Fino</h1>
   </header>
 
   <nav>
@@ -103,9 +127,9 @@
   </nav>
 
   <section>
-    <h2 id="secao-titulo">Navegue pelo menu acima</h2>
+    <h2 id="secao-titulo">Bem-vindo</h2>
     <p id="descricao">
-      Clique em uma das opções para descobrir mais sobre nossos serviços, história, produtos e muito mais. A Barbearia Estilo Fino tem orgulho em oferecer o melhor para você.
+      Clique em qualquer uma das opções acima para conhecer melhor a Barbearia Estilo Fino. Temos orgulho em transformar estilos com excelência.
     </p>
   </section>
 
@@ -115,20 +139,20 @@
 
   <script>
     const textos = {
-      "HOME": "A Barbearia Estilo Fino é o seu destino certo para cortes modernos, barbas bem feitas e um ambiente acolhedor. Desde o momento em que você entra, garantimos atendimento de qualidade, conforto e estilo em cada detalhe.",
-      "QUEM SOMOS": "Fundada em 2015, a Barbearia Estilo Fino nasceu do sonho de unir tradição e modernidade em um só lugar. Somos uma equipe de barbeiros apaixonados por transformar visual e autoestima, sempre em busca da excelência.",
-      "PRODUTOS": "Utilizamos apenas produtos de alta performance para cuidados com cabelo e barba, selecionados das melhores marcas nacionais e internacionais. Seu visual merece o melhor em qualidade e proteção.",
-      "PROMOÇÃO": "Toda semana temos promoções exclusivas! Cortes com desconto, pacotes para pai e filho, fidelidade premiada e muito mais. Fique ligado nas redes sociais ou fale conosco para aproveitar.",
-      "PARCEIROS": "Temos orgulho de colaborar com marcas reconhecidas no setor de beleza masculina, barbearias parceiras e instituições de formação profissional. Juntos, crescemos mais fortes.",
-      "CONTATOS": "Entre em contato conosco através do WhatsApp, telefone fixo ou redes sociais. Nossa equipe está pronta para agendar seu horário ou tirar dúvidas com agilidade e simpatia.",
-      "TRABALHE CONOSCO": "Se você é barbeiro profissional, ama o que faz e busca um ambiente moderno e respeitoso, envie seu currículo para nós. Estamos sempre em busca de talentos para fazer parte da nossa equipe.",
-      "LOCALIZAÇÃO": "Estamos localizados no coração da cidade, com fácil acesso e estacionamento para clientes. Rua das Estrelas, nº 45 – Centro. Venha nos visitar!",
-      "VÍDEOS": "Assista aos bastidores, transformações incríveis e dicas de cuidado no nosso canal. Nosso conteúdo é feito para inspirar você a cuidar do seu visual com estilo e personalidade.",
-      "EXTRA": "Aqui você encontra novidades, eventos, sorteios e conteúdos exclusivos que preparamos com carinho para nossos clientes. Acompanhe nossas redes sociais para não perder nada!"
+      "HOME": "Bem-vindo à Barbearia Estilo Fino — o lugar onde tradição e modernidade se encontram. Aqui, você encontra mais que um corte: uma experiência pensada nos mínimos detalhes para valorizar seu estilo.",
+      "QUEM SOMOS": "Somos uma equipe apaixonada por estilo masculino. Desde 2015, oferecemos cortes, barbas e tratamentos com excelência, sempre focados em oferecer um atendimento diferenciado e personalizado.",
+      "PRODUTOS": "Trabalhamos com as melhores marcas do mercado, oferecendo shampoos, balms, óleos e pomadas de alta qualidade para você cuidar do seu visual em casa com o mesmo padrão da nossa barbearia.",
+      "PROMOÇÃO": "Toda semana, novas ofertas para você aproveitar. De combos especiais a descontos exclusivos para nossos clientes mais fiéis. Fique atento e economize com estilo!",
+      "PARCEIROS": "Acreditamos na força das conexões. Nossos parceiros incluem marcas premium, eventos de moda e escolas de barbeiros que compartilham da nossa visão e qualidade.",
+      "CONTATOS": "Fale conosco pelo WhatsApp, telefone ou redes sociais. Agende seu horário com facilidade e tire dúvidas com nossa equipe atenciosa.",
+      "TRABALHE CONOSCO": "Se você é barbeiro e procura um ambiente profissional, moderno e respeitoso, envie seu currículo. Estamos sempre em busca de talentos para nossa equipe de sucesso.",
+      "LOCALIZAÇÃO": "Rua das Estrelas, nº 45 — Centro. Fácil acesso, estacionamento próprio e um ambiente seguro e acolhedor para você cuidar do visual com tranquilidade.",
+      "VÍDEOS": "Conheça nosso dia a dia, veja transformações incríveis e acompanhe nossos conteúdos educativos sobre cuidados masculinos direto do nosso canal.",
+      "EXTRA": "Aqui você encontra curiosidades, eventos, sorteios e dicas exclusivas que fazem parte do universo Estilo Fino. Fique ligado para não perder nada!"
     };
 
     function mostrar(opcao) {
-      document.getElementById("titulo").textContent = "Barbearia Estilo Fino — " + opcao;
+      document.getElementById("titulo").textContent = "Estilo Fino — " + opcao;
       document.getElementById("secao-titulo").textContent = opcao;
       document.getElementById("descricao").textContent = textos[opcao];
     }
