@@ -22,7 +22,6 @@
     .titulo-principal {
       font-size: 42px;
       color: #e6b800;
-      margin-bottom: 8px;
     }
 
     .subtitulo {
@@ -52,7 +51,7 @@
       padding: 10px 16px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.2s ease;
+      transition: 0.3s ease;
     }
 
     .menu button:hover {
@@ -61,7 +60,7 @@
     }
 
     .conteudo {
-      max-width: 850px;
+      max-width: 900px;
       margin: 30px auto;
       padding: 0 20px;
       text-align: center;
@@ -72,13 +71,12 @@
       height: 400px;
       object-fit: cover;
       margin-bottom: 20px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
     }
 
     .conteudo h2 {
       color: #e6b800;
       font-size: 26px;
-      margin-bottom: 12px;
+      margin-bottom: 15px;
     }
 
     .conteudo p {
@@ -94,7 +92,7 @@
       margin-top: 20px;
     }
 
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       max-width: 500px;
       padding: 10px;
@@ -105,7 +103,7 @@
       font-size: 16px;
     }
 
-    input:focus, textarea:focus {
+    input:focus, textarea:focus, select:focus {
       outline: 2px solid #e6b800;
     }
 
@@ -120,6 +118,15 @@
 
     button.enviar:hover {
       background-color: #d4a600;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #888;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -147,53 +154,59 @@
   <div class="conteudo" id="descricao">
     <img id="imagem" src="https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg" alt="Imagem da barbearia">
     <h2 id="titulo">HOME</h2>
-    <p id="texto">Seja muito bem-vindo à Barbearia Império do Corte, um espaço pensado para homens que valorizam o cuidado com a aparência e o bem-estar...</p>
+    <p id="texto">Bem-vindo à Barbearia Império do Corte, referência em estilo, cuidado masculino e tradição. Aqui você encontra atendimento de excelência, profissionais especializados e um ambiente moderno com clima retrô que valoriza sua identidade.</p>
   </div>
 
   <div class="divisoria"></div>
 
+  <footer>
+    <p>📍 Rua dos Cortes, 123 - Centro - São Paulo/SP</p>
+    <p>⏰ Atendimento: Seg a Sáb - 09h às 20h</p>
+    <p>📞 WhatsApp: (11) 99999-0000 | Instagram: @imperiodocorte</p>
+  </footer>
+
   <script>
     const textos = {
       "HOME": {
-        texto: "Seja muito bem-vindo à Barbearia Império do Corte, um espaço pensado para homens que valorizam o cuidado com a aparência e o bem-estar...",
+        texto: "Bem-vindo à Barbearia Império do Corte, referência em estilo, cuidado masculino e tradição. Aqui você encontra atendimento de excelência, profissionais especializados e um ambiente moderno com clima retrô que valoriza sua identidade.",
         imagem: "https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg"
       },
       "QUEM SOMOS": {
-        texto: "Somos uma barbearia que une tradição e modernidade...",
-        imagem: "https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg"
+        texto: "Fundada em 2015, nossa barbearia une o clássico ao contemporâneo. Valorizamos o atendimento personalizado e a experiência completa para nossos clientes, oferecendo muito mais do que cortes — oferecemos estilo e atitude.",
+        imagem: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg"
       },
       "PRODUTOS": {
-        texto: "Oferecemos uma linha completa de produtos premium para cabelo, barba...",
-        imagem: "https://images.pexels.com/photos/3798479/pexels-photo-3798479.jpeg"
+        texto: "Trabalhamos com os melhores produtos do mercado para cabelo e barba: pomadas modeladoras, óleos, shampoos e máquinas profissionais. Tudo disponível para venda em nossa barbearia.",
+        imagem: "https://images.pexels.com/photos/5769562/pexels-photo-5769562.jpeg"
       },
       "PROMOÇÃO": {
-        texto: "Toda semana você encontra promoções especiais pensadas para facilitar sua rotina...",
-        imagem: "https://images.pexels.com/photos/7755555/pexels-photo-7755555.jpeg"
+        texto: "Confira nossas promoções semanais! Corte + barba por preços especiais nas quartas-feiras. Siga-nos nas redes sociais para não perder as ofertas exclusivas.",
+        imagem: "https://images.pexels.com/photos/7797301/pexels-photo-7797301.jpeg"
       },
       "PARCEIROS": {
-        texto: "Temos orgulho em construir parcerias sólidas com marcas, lojas e profissionais...",
-        imagem: "https://images.pexels.com/photos/8438914/pexels-photo-8438914.jpeg"
+        texto: "Temos parcerias com marcas renomadas do setor e eventos locais. Valorizamos a colaboração e apoiamos a cultura masculina através de ações conjuntas com marcas e influencers.",
+        imagem: "https://images.pexels.com/photos/3993441/pexels-photo-3993441.jpeg"
       },
       "CONTATOS": {
-        texto: "Fale conosco de forma rápida e prática! Atendimento via WhatsApp, telefone e redes sociais...",
-        imagem: "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg"
+        texto: "Fale com a gente! Atendimento rápido via WhatsApp, redes sociais ou presencialmente. Estamos prontos para agendar seu horário com conforto e rapidez.",
+        imagem: "https://images.pexels.com/photos/5699459/pexels-photo-5699459.jpeg"
       },
       "TRABALHE CONOSCO": {
-        texto: "Envie suas informações para fazer parte da equipe Império do Corte!",
-        imagem: "https://images.pexels.com/photos/5995319/pexels-photo-5995319.jpeg",
+        texto: "Faça parte da nossa equipe! Procuramos profissionais apaixonados por barbearia, com foco em atendimento, qualidade e dedicação. Preencha o formulário abaixo para se candidatar.",
+        imagem: "https://images.pexels.com/photos/7697312/pexels-photo-7697312.jpeg",
         form: true
       },
       "LOCALIZAÇÃO": {
-        texto: "Estamos localizados em uma região central com estacionamento próprio...",
-        imagem: "https://images.pexels.com/photos/5721907/pexels-photo-5721907.jpeg"
+        texto: "Estamos localizados no coração de São Paulo, com fácil acesso e estacionamento próprio. Venha nos visitar e viva a experiência Império do Corte!",
+        imagem: "https://images.pexels.com/photos/290322/pexels-photo-290322.jpeg"
       },
       "VÍDEOS": {
-        texto: "Confira nossos vídeos com transformações e dicas exclusivas...",
-        imagem: "https://images.pexels.com/photos/6994986/pexels-photo-6994986.jpeg"
+        texto: "Acesse nossos vídeos de cortes, transformações e bastidores! Estamos sempre produzindo conteúdo para inspirar você e mostrar nosso dia a dia.",
+        imagem: "https://images.pexels.com/photos/7683979/pexels-photo-7683979.jpeg"
       },
       "EXTRA": {
-        texto: "Eventos, sorteios, novidades e tudo que acontece fora da cadeira...",
-        imagem: "https://images.pexels.com/photos/7689146/pexels-photo-7689146.jpeg"
+        texto: "Fique por dentro de eventos, sorteios, lançamentos e tudo o que rola por aqui além dos cortes. O universo Império do Corte vai muito além das navalhas!",
+        imagem: "https://images.pexels.com/photos/8472647/pexels-photo-8472647.jpeg"
       }
     };
 
@@ -203,13 +216,11 @@
       document.getElementById("texto").textContent = conteudo.texto;
       document.getElementById("imagem").src = conteudo.imagem;
 
-      // Remove formulário anterior se houver
       const formExistente = document.getElementById("formulario");
       if (formExistente) {
         formExistente.remove();
       }
 
-      // Se for seção com formulário
       if (conteudo.form) {
         const formulario = document.createElement("form");
         formulario.id = "formulario";
@@ -217,6 +228,12 @@
           <input type="text" placeholder="Nome completo" required>
           <input type="email" placeholder="E-mail" required>
           <input type="tel" placeholder="Telefone" required>
+          <select required>
+            <option value="">Área de interesse</option>
+            <option value="barbeiro">Barbeiro</option>
+            <option value="recepcionista">Recepcionista</option>
+            <option value="auxiliar">Auxiliar de Limpeza</option>
+          </select>
           <textarea rows="4" placeholder="Fale sobre sua experiência..." required></textarea>
           <button type="submit" class="enviar">Enviar inscrição</button>
         `;
