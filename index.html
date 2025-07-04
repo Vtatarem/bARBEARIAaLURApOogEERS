@@ -8,32 +8,31 @@
     body {
       background-color: #1e1e1e;
       color: #f5f5f5;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
 
     header {
       background-color: #111;
-      padding: 40px 20px 20px;
+      padding: 30px 20px 20px;
       text-align: center;
     }
 
     .titulo-principal {
-      font-size: 48px;
+      font-size: 42px;
       color: #e6b800;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .subtitulo {
-      font-size: 20px;
+      font-size: 18px;
       color: #ccc;
     }
 
     .divisoria {
-      border-top: 2px solid #444;
-      border-bottom: 2px solid #444;
-      margin: 30px auto;
+      border-top: 3px solid #555;
+      margin: 40px auto;
       width: 90%;
     }
 
@@ -41,7 +40,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       padding: 20px;
       background-color: #2a2a2a;
     }
@@ -50,11 +49,10 @@
       background-color: transparent;
       border: 2px solid #e6b800;
       color: #e6b800;
-      padding: 10px 20px;
+      padding: 10px 16px;
       font-weight: bold;
       cursor: pointer;
-      transition: all 0.3s ease;
-      border-radius: 5px;
+      transition: all 0.2s ease;
     }
 
     .menu button:hover {
@@ -63,7 +61,7 @@
     }
 
     .conteudo {
-      max-width: 900px;
+      max-width: 850px;
       margin: 30px auto;
       padding: 0 20px;
       text-align: center;
@@ -71,22 +69,57 @@
 
     .conteudo img {
       width: 100%;
-      max-width: 900px;
-      border-radius: 8px;
+      height: 400px;
+      object-fit: cover;
       margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
     }
 
     .conteudo h2 {
       color: #e6b800;
-      font-size: 28px;
-      margin-bottom: 15px;
+      font-size: 26px;
+      margin-bottom: 12px;
     }
 
     .conteudo p {
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.6;
       color: #ddd;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      max-width: 500px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: none;
+      background-color: #333;
+      color: #f5f5f5;
+      font-size: 16px;
+    }
+
+    input:focus, textarea:focus {
+      outline: 2px solid #e6b800;
+    }
+
+    button.enviar {
+      background-color: #e6b800;
+      color: #1e1e1e;
+      font-weight: bold;
+      padding: 12px 20px;
+      cursor: pointer;
+      border: none;
+    }
+
+    button.enviar:hover {
+      background-color: #d4a600;
     }
   </style>
 </head>
@@ -146,8 +179,9 @@
         imagem: "https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg"
       },
       "TRABALHE CONOSCO": {
-        texto: "Você é barbeiro, está em busca de uma nova oportunidade?...",
-        imagem: "https://images.pexels.com/photos/5995319/pexels-photo-5995319.jpeg"
+        texto: "Envie suas informações para fazer parte da equipe Império do Corte!",
+        imagem: "https://images.pexels.com/photos/5995319/pexels-photo-5995319.jpeg",
+        form: true
       },
       "LOCALIZAÇÃO": {
         texto: "Estamos localizados em uma região central com estacionamento próprio...",
@@ -164,9 +198,30 @@
     };
 
     function mostrar(opcao) {
+      const conteudo = textos[opcao];
       document.getElementById("titulo").textContent = opcao;
-      document.getElementById("texto").textContent = textos[opcao].texto;
-      document.getElementById("imagem").src = textos[opcao].imagem;
+      document.getElementById("texto").textContent = conteudo.texto;
+      document.getElementById("imagem").src = conteudo.imagem;
+
+      // Remove formulário anterior se houver
+      const formExistente = document.getElementById("formulario");
+      if (formExistente) {
+        formExistente.remove();
+      }
+
+      // Se for seção com formulário
+      if (conteudo.form) {
+        const formulario = document.createElement("form");
+        formulario.id = "formulario";
+        formulario.innerHTML = `
+          <input type="text" placeholder="Nome completo" required>
+          <input type="email" placeholder="E-mail" required>
+          <input type="tel" placeholder="Telefone" required>
+          <textarea rows="4" placeholder="Fale sobre sua experiência..." required></textarea>
+          <button type="submit" class="enviar">Enviar inscrição</button>
+        `;
+        document.getElementById("descricao").appendChild(formulario);
+      }
     }
   </script>
 </body>
