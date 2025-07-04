@@ -9,104 +9,60 @@
       background-color: #1e1e1e;
       color: #f5f5f5;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
+      margin: 0; padding: 0;
     }
-
     header {
       background-color: #111;
-      padding: 30px 20px 20px;
+      padding: 30px 20px;
       text-align: center;
     }
-
-    .titulo-principal {
-      font-size: 42px;
-      color: #e6b800;
-    }
-
-    .subtitulo {
-      font-size: 18px;
-      color: #ccc;
-    }
-
-    .divisoria {
-      border-top: 3px solid #555;
-      margin: 40px auto;
-      width: 90%;
-    }
-
+    .titulo-principal { font-size: 42px; color: #e6b800; }
+    .subtitulo { font-size: 18px; color: #ccc; }
+    .divisoria { border-top: 3px solid #555; margin: 40px auto; width: 90%; }
     .menu {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-      padding: 20px;
-      background-color: #2a2a2a;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 10px; padding: 20px; background-color: #2a2a2a;
     }
-
-    .menu button {
+    .menu a {
+      display: inline-block;
       background-color: transparent;
       border: 2px solid #e6b800;
       color: #e6b800;
       padding: 10px 16px;
       font-weight: bold;
-      cursor: pointer;
+      text-decoration: none;
       transition: 0.3s ease;
     }
-
-    .menu button:hover {
+    .menu a:hover {
       background-color: #e6b800;
       color: #1e1e1e;
     }
-
     .conteudo {
       max-width: 900px;
-      margin: 30px auto;
-      padding: 0 20px;
+      margin: 30px auto; padding: 0 20px;
       text-align: center;
     }
-
     .conteudo img {
       width: 100%;
       height: 400px;
       object-fit: cover;
       margin-bottom: 20px;
     }
-
-    .conteudo h2 {
-      color: #e6b800;
-      font-size: 26px;
-      margin-bottom: 15px;
-    }
-
-    .conteudo p {
-      font-size: 17px;
-      line-height: 1.6;
-      color: #ddd;
-    }
-
+    .conteudo h2 { color: #e6b800; font-size: 26px; margin-bottom: 15px; }
+    .conteudo p { font-size: 17px; line-height: 1.6; color: #ddd; }
     form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
+      display: flex; flex-direction: column;
+      align-items: center; margin-top: 20px;
     }
-
     input, textarea, select {
-      width: 100%;
-      max-width: 500px;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: none;
-      background-color: #333;
-      color: #f5f5f5;
+      width: 100%; max-width: 500px;
+      padding: 10px; margin-bottom: 15px;
+      border: none; background-color: #333; color: #f5f5f5;
       font-size: 16px;
     }
-
     input:focus, textarea:focus, select:focus {
       outline: 2px solid #e6b800;
     }
-
     button.enviar {
       background-color: #e6b800;
       color: #1e1e1e;
@@ -115,11 +71,9 @@
       cursor: pointer;
       border: none;
     }
-
     button.enviar:hover {
       background-color: #d4a600;
     }
-
     footer {
       background-color: #111;
       text-align: center;
@@ -127,6 +81,12 @@
       margin-top: 40px;
       color: #888;
       font-size: 14px;
+    }
+    footer a {
+      color: #e6b800; text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -137,22 +97,22 @@
   </header>
 
   <div class="menu">
-    <button onclick="mostrar('HOME')">HOME</button>
-    <button onclick="mostrar('QUEM SOMOS')">QUEM SOMOS</button>
-    <button onclick="mostrar('PRODUTOS')">PRODUTOS</button>
-    <button onclick="mostrar('PROMOÇÃO')">PROMOÇÃO</button>
-    <button onclick="mostrar('PARCEIROS')">PARCEIROS</button>
-    <button onclick="mostrar('CONTATOS')">CONTATOS</button>
-    <button onclick="mostrar('TRABALHE CONOSCO')">TRABALHE CONOSCO</button>
-    <button onclick="mostrar('LOCALIZAÇÃO')">LOCALIZAÇÃO</button>
-    <button onclick="mostrar('VÍDEOS')">VÍDEOS</button>
-    <button onclick="mostrar('EXTRA')">EXTRA</button>
+    <a href="https://seusite.com/home" target="_blank">HOME</a>
+    <a href="https://seusite.com/quem-somos" target="_blank">QUEM SOMOS</a>
+    <a href="https://seusite.com/produtos" target="_blank">PRODUTOS</a>
+    <a href="https://seusite.com/promocao" target="_blank">PROMOÇÃO</a>
+    <a href="https://seusite.com/parceiros" target="_blank">PARCEIROS</a>
+    <a href="https://seusite.com/contatos" target="_blank">CONTATOS</a>
+    <a href="https://seusite.com/trabalhe-conosco" target="_blank">TRABALHE CONOSCO</a>
+    <a href="https://seusite.com/localizacao" target="_blank">LOCALIZAÇÃO</a>
+    <a href="https://seusite.com/videos" target="_blank">VÍDEOS</a>
+    <a href="https://seusite.com/extra" target="_blank">EXTRA</a>
   </div>
 
   <div class="divisoria"></div>
 
   <div class="conteudo" id="descricao">
-    <img id="imagem" src="https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg" alt="Imagem da barbearia">
+    <img id="imagem" src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg" alt="Barbearia">
     <h2 id="titulo">HOME</h2>
     <p id="texto">Bem-vindo à Barbearia Império do Corte, referência em estilo, cuidado masculino e tradição. Aqui você encontra atendimento de excelência, profissionais especializados e um ambiente moderno com clima retrô que valoriza sua identidade.</p>
   </div>
@@ -161,8 +121,8 @@
 
   <footer>
     <p>📍 Rua dos Cortes, 123 - Centro - São Paulo/SP</p>
-    <p>⏰ Atendimento: Seg a Sáb - 09h às 20h</p>
-    <p>📞 WhatsApp: (11) 99999-0000 | Instagram: @imperiodocorte</p>
+    <p>⏰ Seg a Sáb - 09h às 20h</p>
+    <p>📞 <a href="https://wa.me/5511999990000" target="_blank">WhatsApp</a> | <a href="https://www.instagram.com/imperiodocorte" target="_blank">Instagram</a></p>
   </footer>
 
   <script>
@@ -173,7 +133,7 @@
       },
       "QUEM SOMOS": {
         texto: "Fundada em 2015, nossa barbearia une o clássico ao contemporâneo. Valorizamos o atendimento personalizado e a experiência completa para nossos clientes, oferecendo muito mais do que cortes — oferecemos estilo e atitude.",
-        imagem: "https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg"
+        imagem: "https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg"
       },
       "PRODUTOS": {
         texto: "Trabalhamos com os melhores produtos do mercado para cabelo e barba: pomadas modeladoras, óleos, shampoos e máquinas profissionais. Tudo disponível para venda em nossa barbearia.",
@@ -211,22 +171,20 @@
     };
 
     function mostrar(opcao) {
-      const conteudo = textos[opcao];
+      const c = textos[opcao];
       document.getElementById("titulo").textContent = opcao;
-      document.getElementById("texto").textContent = conteudo.texto;
-      document.getElementById("imagem").src = conteudo.imagem;
+      document.getElementById("texto").textContent = c.texto;
+      document.getElementById("imagem").src = c.imagem;
 
-      const formExistente = document.getElementById("formulario");
-      if (formExistente) {
-        formExistente.remove();
-      }
+      const antigo = document.getElementById("formulario");
+      if (antigo) antigo.remove();
 
-      if (conteudo.form) {
-        const formulario = document.createElement("form");
-        formulario.id = "formulario";
-        formulario.innerHTML = `
+      if (c.form) {
+        const f = document.createElement("form");
+        f.id = "formulario";
+        f.innerHTML = `
           <input type="text" placeholder="Nome completo" required>
-          <input type="email" placeholder="E-mail" required>
+          <input type="email" placeholder="E‑mail" required>
           <input type="tel" placeholder="Telefone" required>
           <select required>
             <option value="">Área de interesse</option>
@@ -234,10 +192,10 @@
             <option value="recepcionista">Recepcionista</option>
             <option value="auxiliar">Auxiliar de Limpeza</option>
           </select>
-          <textarea rows="4" placeholder="Fale sobre sua experiência..." required></textarea>
+          <textarea rows="4" placeholder="Sua experiência..." required></textarea>
           <button type="submit" class="enviar">Enviar inscrição</button>
         `;
-        document.getElementById("descricao").appendChild(formulario);
+        document.getElementById("descricao").appendChild(f);
       }
     }
   </script>
